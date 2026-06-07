@@ -1,0 +1,26 @@
+package com.example.blog_app;
+
+// BlogForm.javaはEntityで、サービス→リポジトリ→データベースへとデータの保存時の受け渡しを担う
+public class BlogForm {
+    // @RequestParamで引数に並べて受け取る形では、入力欄が増えるたびにメソッドの引数リストが長くなる
+    // 複数のフィールドをまとめたフォームクラスを作り、Spring Bootがリクエストの値をフィールドに割り当てる形にする目的
+    private String title; // ブログタイトル
+    private String notes; // ブログ本文
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+}

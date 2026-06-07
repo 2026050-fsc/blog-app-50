@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -9,18 +9,22 @@
 
 <body>
     <h1>ブログ一覧</h1>
-    <!-- 【追加１】 -->
+    <p th:if="${#blogs.isEmpty(blogs)}">ブログがありません</p>
+    <!-- th:ifを付けたタグは ${...} の中身が真の時だけ出力され、偽のときは出力されない
+    リストが空かどうかは、Thymeleafの組み込みオブジェクト #lists.isEmpty(リスト名) で判定
+    (リスト名)のリスト名はリストを作成しているファイル(TasksController.java)を参照する -->
+
     <ul>
-        <li>
-            <span>〇〇占い１</span>
-            <a href="/blogs/detail">続きを読む</a>
-        </li>
-        <li>
-            <span>〇〇占い２</span>
+        <li th:each="blog :${blogs}">
+            <!-- th:each 同じ形のリストを要素の数だけ繰り返す -->
+            <!-- th:eachは大枠のulではなく、項目(データ)を持つliに付ける -->
+            <span th:text="${blog.title}">仮表示占いタイトル</span>
+            <span th:text="${blog.notes}">仮表示占い本文</span>
+            <!-- th:text タグの中身に値を埋め込む ${...} の値で置き換え -->
             <a href="/blogs/detail">続きを読む</a>
         </li>
     </ul>
-    <a href="/blogs/new">投稿する</a>
+    <a href="/blogs/new">新規投稿</a>
 </body>
 
 </html>

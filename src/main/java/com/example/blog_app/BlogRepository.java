@@ -1,0 +1,29 @@
+package com.example.blog_app;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.simple.JdbcClient;
+
+public class BlogRepository {
+    private final JdbcClient jdbcClient;
+
+    public BlogRepository (JdbcClient jdbcClient) {
+        this.jdbcClient = jdbcClient;
+    }
+
+    public List<Blog> findAll() {
+        return jdbcClient.sql("SELECT id, title, notes FROM blogs")
+                .query(Blog.class)
+                // 結果の1行を1つのBlogにする
+                // このとき、Blogのコンストラクターを呼び、引数と同じ名前の列の値を渡す
+                .list();
+    }
+
+    public void save(Blog blog) {
+        jdbcClient.sql("INSERT INTO blogs (title, notes) VALUES (:title, :notes)")
+        // 名前付きパラメーター(:名前 という目印をSQLに置き、paramで渡す)
+                .param("title", blog.getTitle())
+                .param("notes", blog.getNotes())
+                .update();
+    }
+}
