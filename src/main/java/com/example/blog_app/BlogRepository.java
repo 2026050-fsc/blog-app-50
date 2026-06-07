@@ -3,7 +3,9 @@ package com.example.blog_app;
 import java.util.List;
 
 import org.springframework.jdbc.core.simple.JdbcClient;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class BlogRepository {
     private final JdbcClient jdbcClient;
 

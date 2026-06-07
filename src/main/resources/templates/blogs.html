@@ -9,7 +9,7 @@
 
 <body>
     <h1>ブログ一覧</h1>
-    <p th:if="${#blogs.isEmpty(blogs)}">ブログがありません</p>
+    <p th:if="${#lists.isEmpty(blogs)}">ブログがありません</p>
     <!-- th:ifを付けたタグは ${...} の中身が真の時だけ出力され、偽のときは出力されない
     リストが空かどうかは、Thymeleafの組み込みオブジェクト #lists.isEmpty(リスト名) で判定
     (リスト名)のリスト名はリストを作成しているファイル(TasksController.java)を参照する -->
