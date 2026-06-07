@@ -14,4 +14,9 @@ public class BlogController {
     public String newBlog() {
         return "blogs/new";
     }
+
+    @GetMapping("/blogs/detail")
+    public String detailBlog() {
+        return "blogs/detail";
+    }
 }
