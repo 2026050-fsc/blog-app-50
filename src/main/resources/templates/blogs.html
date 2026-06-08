@@ -9,6 +9,7 @@
 <head th:replace="~{fragments/layout :: head('書籍一覧')}"></head>
 <!-- ヘッダーのフラグメント化 -->
 
+<body>
 
     <header class="site-header">
         <a class="site-name">
@@ -21,9 +22,9 @@
             </ul>
         </nav>
     </header>
+    <!-- 共通ナビゲーション -->
 
 
-<body>
     <h1>ブログ一覧</h1>
     <p th:if="${#lists.isEmpty(blogs)}">ブログがありません</p>
     <!-- th:ifを付けたタグは ${...} の中身が真の時だけ出力され、偽のときは出力されない
