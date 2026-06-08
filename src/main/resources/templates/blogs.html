@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
-
+ -->
 <!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Blogs</title>
 </head> -->
-<head th:replace="~{fragments/layout :: head('書籍一覧')}"></head>
+<head th:replace="~{fragments/layout :: head('ブログ一覧')}"></head>
 <!-- ヘッダーのフラグメント化 -->
 
 <body>
@@ -42,10 +42,13 @@
         </li>
     </ul> -->
     <!-- 上記ulタグ内を下記div表示に変更 -->
-     <div th:each="blog :${blogs}">
-        <span th:text="${blog.title}">仮表示占いタイトル</span>
-        <span th:text="${blog.notes}">仮表示占い本文</span>
-        <a href="/blogs/detail">続きを読む</a>
+     <div th:each="blog :${blogs}" class="blog-container">
+        <div class="width-display">
+            <div class="child">
+                <div th:text="${blog.title}">仮表示占いタイトル</div>
+                <a href="/blogs/detail">続きを読む</a>
+            </div>
+        </div>
      </div>
 
     <a href="/blogs/new">新規投稿</a>

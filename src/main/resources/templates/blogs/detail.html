@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> -->
+
 <!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>詳細</title>
 </head> -->
-<head th:replace="~{fragments/layout :: head('書籍一覧')}"></head>
+
+<head th:replace="~{fragments/layout :: head('ブログ一覧')}"></head>
 <!-- ヘッダーのフラグメント化 -->
 <body>
+
     <header class="site-header">
         <a class="site-name">
             <h1>Blog</h1>
@@ -20,6 +23,12 @@
         </nav>
     </header>
     <!-- 共通ナビゲーション -->
+
+    <h1>詳細</h1>
+    <div th:each="blog :${blogs}">
+        <div th:text="${blog.title}">仮表示占いタイトル</div>
+        <div th:text="${blog.notes}">仮表示占い本文</div>
+    </div>
 
 </body>
 </html>

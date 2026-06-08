@@ -33,3 +33,33 @@ body {
 .under {
     border-top: 1px solid #e5e5e5;
 }
+
+/* 上記まではBookStore参照 */
+
+.blog-container {
+    resize: horizontal;
+    overflow: hidden;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 800px;
+    min-width: 200px;
+}
+
+.container {
+    container-type: inline-size;
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+.child {
+    margin: 10px 0;
+}
+
+.child div {
+    background: #2196F3;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 4px;
+}

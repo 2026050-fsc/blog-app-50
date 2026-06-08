@@ -37,8 +37,15 @@ public class BlogController {
         return "blogs/new";
     }
 
+    // @GetMapping("/blogs/detail")
+    // public String detailBlog() {
+    //     return "blogs/detail";
+    // }
+
     @GetMapping("/blogs/detail")
-    public String detailBlog() {
+    public String detailBlog(Model model) {
+        model.addAttribute("blogs", blogService.findAll());
         return "blogs/detail";
     }
+
 }
