@@ -14,16 +14,23 @@
     リストが空かどうかは、Thymeleafの組み込みオブジェクト #lists.isEmpty(リスト名) で判定
     (リスト名)のリスト名はリストを作成しているファイル(TasksController.java)を参照する -->
 
-    <ul>
-        <li th:each="blog :${blogs}">
+    <!-- <ul>
+        <li th:each="blog :${blogs}"> -->
             <!-- th:each 同じ形のリストを要素の数だけ繰り返す -->
             <!-- th:eachは大枠のulではなく、項目(データ)を持つliに付ける -->
-            <span th:text="${blog.title}">仮表示占いタイトル</span>
-            <span th:text="${blog.notes}">仮表示占い本文</span>
+            <!-- <span th:text="${blog.title}">仮表示占いタイトル</span>
+            <span th:text="${blog.notes}">仮表示占い本文</span> -->
             <!-- th:text タグの中身に値を埋め込む ${...} の値で置き換え -->
-            <a href="/blogs/detail">続きを読む</a>
+            <!-- <a href="/blogs/detail">続きを読む</a>
         </li>
-    </ul>
+    </ul> -->
+    <!-- 上記ulタグ内を下記div表示に変更 -->
+     <div th:each="blog :${blogs}">
+        <span th:text="${blog.title}">仮表示占いタイトル</span>
+        <span th:text="${blog.notes}">仮表示占い本文</span>
+        <a href="/blogs/detail">続きを読む</a>
+     </div>
+
     <a href="/blogs/new">新規投稿</a>
 </body>
 
