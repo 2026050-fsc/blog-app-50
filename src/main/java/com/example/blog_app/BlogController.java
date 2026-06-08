@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -47,5 +48,15 @@ public class BlogController {
         model.addAttribute("blogs", blogService.findAll());
         return "blogs/detail";
     }
+
+    // @PostMapping("/tasks/{id}/delete")
+    // public String deleteTask(@PathVariable Long id) {
+    //     // @PathVariableでパスの一部を受け取りLong型のidという名前の変数に代入
+    //     taskService.deleteTask(id);
+    //     // Sereviceを介してタスクのcompletedを反転させる
+    //     return "redirect:/tasks";
+    // }
+    // ↑detail表示のため仮追加、idを取得する(本日の最終)
+
 
 }

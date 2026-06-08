@@ -47,6 +47,7 @@
             <div class="child">
                 <div th:text="${blog.title}">仮表示占いタイトル</div>
                 <a href="/blogs/detail">続きを読む</a>
+                <a th:href="@{/blogs/{id}(id=${blog.id})}">続きを読む</a>
             </div>
         </div>
      </div>
