@@ -1,5 +1,7 @@
 package com.example.blog_app;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,20 +45,30 @@ public class BlogController {
     //     return "blogs/detail";
     // }
 
-    @GetMapping("/blogs/detail")
-    public String detailBlog(Model model) {
-        model.addAttribute("blogs", blogService.findAll());
+    // @GetMapping("/blogs/detail")
+    // public String detailBlog(Model model) {
+    //     model.addAttribute("blogs", blogService.findAll());
+    //     return "blogs/detail";
+    // }
+
+    // @GetMapping("/blogs/{id}")
+    // public String detailBlog(@PathVariable Long id, Model model) {
+    //     // @PathVariableでパスの一部を受け取りLong型のidという名前の変数に代入
+    //     blogService.detailBlog(id);
+    //     // Serviceを介してブログを取得
+    //     model.addAttribute("blog" , blog);
+    //     return "redirect:/detail";
+    // }
+
+    @GetMapping("/blogs/{id}")
+    public String detailBlog(@PathVariable Long id, Model model) {
+        // @PathVariableでパスの一部を受け取りLong型のidという名前の変数に代入
+        Optional<Blog> blogOpt = blogService.detailBlog(id);
+        if (blogOpt.isEmpty()) {
+            return "redirect:/blogs";
+        }
+        model.addAttribute("blog" , blogOpt.get());
         return "blogs/detail";
     }
-
-    // @PostMapping("/tasks/{id}/delete")
-    // public String deleteTask(@PathVariable Long id) {
-    //     // @PathVariableでパスの一部を受け取りLong型のidという名前の変数に代入
-    //     taskService.deleteTask(id);
-    //     // Sereviceを介してタスクのcompletedを反転させる
-    //     return "redirect:/tasks";
-    // }
-    // ↑detail表示のため仮追加、idを取得する(本日の最終)
-
 
 }

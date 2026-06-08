@@ -1,0 +1,16 @@
+【Blogアプリ】関連SQL
+〇DB,テーブル作成,データ追加
+
+CREATE DATABASE blogs;
+USE blogs;
+
+CREATE TABLE blogs (
+  id        INT PRIMARY KEY AUTO_INCREMENT,
+  title     VARCHAR(255) NOT NULL,
+  notes     TEXT
+);
+
+INSERT INTO blogs (title, notes) VALUES
+  ('〇〇占い１', 'おはようございます'),
+  ('○○占い２', 'こんにちは'),
+  ('○○占い３', 'こんばんは');

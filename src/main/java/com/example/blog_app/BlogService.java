@@ -1,6 +1,7 @@
 package com.example.blog_app;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -39,5 +40,9 @@ public class BlogService {
         // 組み立てたBlogオブジェクトをリポジトリのsaveメソッドに手渡し、INSERTの命令
         // nullはsave時(新規登録時)段階ではまだidが決まっていないため、idの部分にnullを渡している
         // 引数を設定しないと、Blogのフィールド数と数が合わずエラーが起きる
+    }
+
+    public Optional<Blog> detailBlog(Long id) {
+        return blogRepository.detailBlog(id);
     }
 }
