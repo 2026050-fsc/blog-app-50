@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログ投稿</title>
-</head>
+</head> -->
+<head th:replace="~{fragments/layout :: head('書籍一覧')}"></head>
+<!-- ヘッダーのフラグメント化 -->
+
 <body>
     <h1>ブログ投稿</h1>
     <form action="/blogs" method="post">

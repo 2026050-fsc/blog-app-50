@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-name {
+    color: purple;
+    font-size: 1.6rem;
+}
+
+.site-nav {
+    color: #34302d;
+}
+
+.site-nav ul {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    list-style: none;
+}
+
+.site-nav a {
+    color: #34302d;
+    text-decoration: none;
+}
+
+.under {
+    border-top: 1px solid #e5e5e5;
+}

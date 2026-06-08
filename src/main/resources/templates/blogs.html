@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Blogs</title>
-</head>
+</head> -->
+<head th:replace="~{fragments/layout :: head('書籍一覧')}"></head>
+<!-- ヘッダーのフラグメント化 -->
+
+
+    <header class="site-header">
+        <a class="site-name">
+            <h1>Blog</h1>
+        </a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/blogs">ホーム</a></li>
+                <li><a href="/blogs/new">新規投稿</a></li>
+            </ul>
+        </nav>
+    </header>
+
 
 <body>
     <h1>ブログ一覧</h1>
