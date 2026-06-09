@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログ投稿</title>
 </head> -->
+
 <head th:replace="~{fragments/layout :: head('ブログ一覧')}"></head>
 <!-- ヘッダーのフラグメント化 -->
 
@@ -24,12 +25,27 @@
     <!-- 共通ナビゲーション -->
 
     <h1>ブログ投稿</h1>
-    <form action="/blogs" method="post">
-        <label for="title">タイトル：</label>
-        <input type="text" id="title" name="title">
-        <label for="notes">本文：</label>
-        <textarea name="notes" id="notes" rows="5" cols="33"></textarea>
-        <button type="submit">投稿</button>
-    </form>
+
+    <div class="blog-container">
+        <div class="width-display">
+            <form action="/blogs" method="post">
+
+                <div class="child">
+                    <label for="title">タイトル：</label><br>
+                    <input type="text" id="title" name="title">
+                </div>
+
+
+                <div class="child">
+                    <label for="notes">本文：</label><br>
+                    <textarea name="notes" id="notes" rows="5" cols="33"></textarea>
+                </div>
+
+
+                <button type="submit">投稿</button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
