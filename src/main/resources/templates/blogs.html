@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Blogs</title>
 </head> -->
+
 <head th:replace="~{fragments/layout :: head('ブログ一覧')}"></head>
 <!-- ヘッダーのフラグメント化 -->
 
@@ -33,24 +34,25 @@
 
     <!-- <ul>
         <li th:each="blog :${blogs}"> -->
-            <!-- th:each 同じ形のリストを要素の数だけ繰り返す -->
-            <!-- th:eachは大枠のulではなく、項目(データ)を持つliに付ける -->
-            <!-- <span th:text="${blog.title}">仮表示占いタイトル</span>
+    <!-- th:each 同じ形のリストを要素の数だけ繰り返す -->
+    <!-- th:eachは大枠のulではなく、項目(データ)を持つliに付ける -->
+    <!-- <span th:text="${blog.title}">仮表示占いタイトル</span>
             <span th:text="${blog.notes}">仮表示占い本文</span> -->
-            <!-- th:text タグの中身に値を埋め込む ${...} の値で置き換え -->
-            <!-- <a href="/blogs/detail">続きを読む</a>
+    <!-- th:text タグの中身に値を埋め込む ${...} の値で置き換え -->
+    <!-- <a href="/blogs/detail">続きを読む</a>
         </li>
     </ul> -->
     <!-- 上記ulタグ内を下記div表示に変更 -->
-     <div th:each="blog :${blogs}" class="blog-container">
+    <div th:each="blog :${blogs}" class="blog-container">
         <div class="width-display">
             <div class="child">
                 <div th:text="${blog.title}">仮表示占いタイトル</div>
+                <!-- <img src="/images/blood.png" alt="" width="200px"> -->
+                <img th:src="@{'/images/' + ${blog.imgs}}" alt="ブログ画像" width="120px"><br>
                 <a th:href="@{/blogs/{id}(id=${blog.id})}">詳細を見る</a>
             </div>
         </div>
-     </div>
-
+    </div>
     <a href="/blogs/new">新規投稿</a>
 </body>
 

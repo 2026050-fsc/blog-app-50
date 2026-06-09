@@ -9,6 +9,7 @@
 
 <head th:replace="~{fragments/layout :: head('ブログ一覧')}"></head>
 <!-- ヘッダーのフラグメント化 -->
+
 <body>
 
     <header class="site-header">
@@ -24,11 +25,13 @@
     </header>
     <!-- 共通ナビゲーション -->
 
-    <h1>詳細</h1>
+    <!-- <h1>詳細</h1> -->
     <div>
-        <h1>仮表示占いタイトル</h1>
+        <h1 th:text="${blog.title}">仮表示占いタイトル</h1>
         <div th:text="${blog.notes}">仮表示占い本文</div>
+        <img th:src="@{'/images/' + ${blog.imgs}}" alt="ブログ画像" width="120px"><br>
     </div>
 
 </body>
+
 </html>

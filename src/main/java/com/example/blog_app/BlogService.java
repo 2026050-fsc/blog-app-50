@@ -1,9 +1,15 @@
 package com.example.blog_app;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class BlogService {
@@ -35,7 +41,16 @@ public class BlogService {
             throw new IllegalArgumentException("本文が空です");
         }
 
-        blogRepository.save(new Blog(null, form.getTitle(), form.getNotes()));
+        MultipartFile file = form.getImgs();
+        String fileName = file.getOriginalFilename();
+
+        try {
+            Path filePath = Paths.get("src/main/resources/static/images/" + fileName);
+Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);        } catch(IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        blogRepository.save(new Blog(null, form.getTitle(), form.getNotes(), fileName));
         // 上記のビジネスロジックを通過した安全なデータだけをデータベースに保存する
         // 組み立てたBlogオブジェクトをリポジトリのsaveメソッドに手渡し、INSERTの命令
         // nullはsave時(新規登録時)段階ではまだidが決まっていないため、idの部分にnullを渡している

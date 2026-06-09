@@ -28,7 +28,8 @@
 
     <div class="blog-container">
         <div class="width-display">
-            <form action="/blogs" method="post">
+            <form action="/blogs" method="post" enctype="multipart/form-data">
+            <!-- enctype="multipart/form-data"は画像を送信する場合に必要 -->
 
                 <div class="child">
                     <label for="title">タイトル：</label><br>
@@ -41,6 +42,10 @@
                     <textarea name="notes" id="notes" rows="5" cols="33"></textarea>
                 </div>
 
+                <div class="child">
+                    <label for="imgs">画像：</label><br>
+                    <input type="file" name="imgs" id="imgs">
+                </div>
 
                 <button type="submit">投稿</button>
             </form>
