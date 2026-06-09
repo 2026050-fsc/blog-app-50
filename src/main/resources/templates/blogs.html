@@ -48,7 +48,7 @@
             <div class="child">
                 <div th:text="${blog.title}">仮表示占いタイトル</div>
                 <!-- <img src="/images/blood.png" alt="" width="200px"> -->
-                <img th:src="@{'/images/' + ${blog.imgs}}" alt="ブログ画像" width="120px"><br>
+                <img th:src="@{'/images/' + ${blog.imgs}}" alt="ブログ画像" width="70px"><br>
                 <a th:href="@{/blogs/{id}(id=${blog.id})}">詳細を見る</a>
             </div>
         </div>
