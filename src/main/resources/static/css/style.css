@@ -72,3 +72,17 @@ body {
 .br_css {
     white-space: pre-wrap;
 }
+
+.pro_flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pro_text {
+    display: flex;
+    justify-content: center;
+}
+
+.pro_h {
+    margin-left: 20px;
+}

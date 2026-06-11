@@ -71,4 +71,8 @@ public class BlogController {
         return "blogs/detail";
     }
 
+    @GetMapping("/blogs/profile")
+    public String profileBlog() {
+        return "blogs/profile";
+    }
 }
