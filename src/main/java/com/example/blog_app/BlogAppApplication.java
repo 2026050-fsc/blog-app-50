@@ -1,3 +1,5 @@
+// アプリケーション実行
+
 package com.example.blog_app;
 
 import org.springframework.boot.SpringApplication;
