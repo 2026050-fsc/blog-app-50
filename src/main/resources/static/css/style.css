@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: #c765e5; */
+    background-color: #e1bbed;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -61,11 +61,19 @@ body {
 }
 
 .child div {
-    background: #2196F3;
+    background: #8f3ec1;
     color: white;
     padding: 15px;
     margin: 5px;
     border-radius: 4px;
+}
+
+.blogs_flex {
+    display: flex;
+}
+
+.a_margin {
+    margin-right: 10px;
 }
 
 /* 本文の改行表示 */

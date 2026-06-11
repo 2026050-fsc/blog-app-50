@@ -75,4 +75,10 @@ public class BlogController {
     public String profileBlog() {
         return "blogs/profile";
     }
+    
+    @PostMapping("/blogs/{id}/delete")
+    public String deleteBlog(@PathVariable Long id) {
+        blogService.deleteBlog(id);
+        return "redirect:/blogs";
+    }
 }
