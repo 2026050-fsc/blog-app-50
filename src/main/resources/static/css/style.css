@@ -67,3 +67,8 @@ body {
     margin: 5px;
     border-radius: 4px;
 }
+
+/* 本文の改行表示 */
+.br_css {
+    white-space: pre-wrap;
+}

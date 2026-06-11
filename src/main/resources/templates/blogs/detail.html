@@ -28,7 +28,7 @@
     <!-- <h1>詳細</h1> -->
     <div>
         <h1 th:text="${blog.title}">仮表示占いタイトル</h1>
-        <div th:text="${blog.notes}">仮表示占い本文</div>
+        <div th:text="${blog.notes}" class="br_css">仮表示占い本文</div>
         <img th:src="@{'/images/' + ${blog.imgs}}" alt="ブログ画像" width="70px"><br>
     </div>
 
