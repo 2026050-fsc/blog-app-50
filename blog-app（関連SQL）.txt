@@ -7,7 +7,8 @@ USE blogs;
 CREATE TABLE blogs (
   id        INT PRIMARY KEY AUTO_INCREMENT,
   title     VARCHAR(255) NOT NULL,
-  notes     TEXT
+  notes     TEXT,
+  imgs      VARCHAR(255)
 );
 
 INSERT INTO blogs (title, notes) VALUES
