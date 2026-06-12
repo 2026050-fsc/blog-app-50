@@ -1,3 +1,11 @@
+// リポジトリ
+
+/**
+ * @author 由迫ひかり
+ * @version 4.0.6
+ * @since 2026/6/4
+ */
+
 package com.example.blog_app;
 
 import java.util.List;
@@ -10,7 +18,7 @@ import org.springframework.stereotype.Repository;
 public class BlogRepository {
     private final JdbcClient jdbcClient;
 
-    public BlogRepository (JdbcClient jdbcClient) {
+    public BlogRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
 
@@ -24,7 +32,7 @@ public class BlogRepository {
 
     public void save(Blog blog) {
         jdbcClient.sql("INSERT INTO blogs (title, notes, imgs) VALUES (:title, :notes, :imgs)")
-        // 名前付きパラメーター(:名前 という目印をSQLに置き、paramで渡す)
+                // 名前付きパラメーター(:名前 という目印をSQLに置き、paramで渡す)
                 .param("title", blog.getTitle())
                 .param("notes", blog.getNotes())
                 .param("imgs", blog.getImgs())
@@ -40,7 +48,7 @@ public class BlogRepository {
 
     public void deleteBlog(Long id) {
         jdbcClient.sql("DELETE FROM blogs WHERE id = :id")
-        .param("id", id)
-        .update();
+                .param("id", id)
+                .update();
     }
 }

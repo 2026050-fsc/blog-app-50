@@ -33,6 +33,7 @@ body {
     color: #34302d;
     text-decoration: none;
 }
+
 /* 上記までBookStore参照 */
 
 .blog-container {
@@ -62,6 +63,7 @@ body {
     margin: 5px;
     border-radius: 4px;
 }
+
 /* 上記まで他WEBサイト参照 */
 
 .blogs_flex {

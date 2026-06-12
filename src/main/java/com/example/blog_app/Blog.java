@@ -1,3 +1,11 @@
+// データの入力時
+
+/**
+ * @author 由迫ひかり
+ * @version 4.0.6
+ * @since 2026/6/4
+ */
+
 package com.example.blog_app;
 
 // Blog.javaはDTOで、画面→コントローラー→サービスへとデータの入力時の受け渡しを担う
