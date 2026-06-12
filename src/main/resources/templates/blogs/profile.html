@@ -1,0 +1,44 @@
+<head th:replace="~{fragments/layout :: head('ブログ一覧')}"></head>
+<!-- ヘッダーのフラグメント化 -->
+
+<body>
+
+    <header class="site-header">
+        <a class="site-name">
+            <h1>Blog *.</h1>
+        </a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/blogs">ホーム</a></li>
+                <li><a href="/blogs/new">新規投稿</a></li>
+                <li><a href="/blogs/profile">投稿者</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 共通ナビゲーション -->
+
+    <h3 class="pro_h">概要</h3>
+    <div class="pro_flex">
+        <div>
+            <p>名前：占い花子</p>
+            <p>年齢：20</p>
+            <p>血液型：O型</p>
+            <p>星座：水瓶座</p>
+        </div>
+        <div>
+            <img src="/images/job_uranaishi.png" alt="profile">
+        </div>
+    </div>
+    <div>
+        <h3 class="pro_h">経歴</h3>
+        <div class="pro_text">
+            <span>弱冠20歳にして、鋭い直感と圧倒的な的中率で注目を集める新進気鋭の占い師。<br>
+                水瓶座生まれらしい型にはまらない自由な発想と、O型特有の大らかで親しみやすい人柄が魅力。<br>
+                「占いは未来を縛るものではなく、可能性を広げるもの」をモットーに、相談者の心に寄り添うポジティブな鑑定を行う。<br>
+                同世代ならではのリアルな悩みから大人の人生相談まで、枠に捉われない等身大のアドバイスがSNSを中心に「心が軽くなる」と話題を呼んでいる。
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,19 +1,19 @@
 body {
     font-family: sans-serif;
-    /* background-color: #d9b9e3; */
+    background-color: #f0ebf2;
 }
 
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: #c765e5; */
+    background-color: #e1bbed;
     padding-left: 20px;
     padding-right: 20px;
 }
 
 .site-name {
-    /* color: purple; */
+    color: purple;
     font-size: 1.6rem;
 }
 
@@ -33,12 +33,7 @@ body {
     color: #34302d;
     text-decoration: none;
 }
-
-.under {
-    border-top: 1px solid #e5e5e5;
-}
-
-/* 上記まではBookStore参照 */
+/* 上記までBookStore参照 */
 
 .blog-container {
     resize: horizontal;
@@ -61,9 +56,37 @@ body {
 }
 
 .child div {
-    background: #2196F3;
+    background: #8f3ec1;
     color: white;
     padding: 15px;
     margin: 5px;
     border-radius: 4px;
+}
+/* 上記まで他WEBサイト参照 */
+
+.blogs_flex {
+    display: flex;
+}
+
+.a_margin {
+    margin-right: 10px;
+}
+
+/* 本文の改行表示 */
+.br_css {
+    white-space: pre-wrap;
+}
+
+.pro_flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pro_text {
+    display: flex;
+    justify-content: center;
+}
+
+.pro_h {
+    margin-left: 20px;
 }

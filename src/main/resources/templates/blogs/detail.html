@@ -1,11 +1,4 @@
-<!-- <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"> -->
-
-<!-- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>詳細</title>
-</head> -->
+<!-- ブログの詳細を表示する画面：本文はここで表示 -->
 
 <head th:replace="~{fragments/layout :: head('ブログ一覧')}"></head>
 <!-- ヘッダーのフラグメント化 -->
@@ -14,22 +7,22 @@
 
     <header class="site-header">
         <a class="site-name">
-            <h1>Blog</h1>
+            <h1>Blog *.</h1>
         </a>
         <nav class="site-nav">
             <ul>
                 <li><a href="/blogs">ホーム</a></li>
                 <li><a href="/blogs/new">新規投稿</a></li>
+                <li><a href="/blogs/profile">投稿者</a></li>
             </ul>
         </nav>
     </header>
     <!-- 共通ナビゲーション -->
 
-    <!-- <h1>詳細</h1> -->
     <div>
-        <h1 th:text="${blog.title}">仮表示占いタイトル</h1>
-        <div th:text="${blog.notes}">仮表示占い本文</div>
-        <img th:src="@{'/images/' + ${blog.imgs}}" alt="ブログ画像" width="70px"><br>
+        <h1 th:text="${blog.title}">仮表示タイトル</h1>
+        <div th:text="${blog.notes}" class="br_css">仮表示本文</div>
+        <img th:src="@{'/images/' + ${blog.imgs}}" alt="仮表示画像" width="70px"><br>
     </div>
 
 </body>

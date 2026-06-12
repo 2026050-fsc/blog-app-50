@@ -46,7 +46,8 @@ public class BlogService {
 
         try {
             Path filePath = Paths.get("src/main/resources/static/images/" + fileName);
-Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);        } catch(IOException e) {
+            Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
@@ -59,5 +60,9 @@ Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING)
 
     public Optional<Blog> detailBlog(Long id) {
         return blogRepository.detailBlog(id);
+    }
+
+    public void deleteBlog(Long id) {
+        blogRepository.deleteBlog(id);
     }
 }
